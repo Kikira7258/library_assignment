@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/styles.css">
+
+    
+    
+    <title>Document</title>
+</head>
+<body class="bg-[url(https://st.hzcdn.com/simgs/df514fb4042d298f_4-5905/home-design.jpg)] bg-no-repeat bg-cover bg-fixed">
+    <h1 class="text-center mt-8">BOOKS</h1>
+
+    <ul class="grid grid-cols-5 mx-16 gap-y-8 my-12">
+        <% if(data.length) {
+            for(var i = 0; i < data.length; i++) { %>
+
+                <li class="w-[220px] overflow-none shadow-md shadow-blue-300 rounded-md hover:shadow-pink-200 py-4 px-4 bg-[#fff]">
+                    <div class="h-[220px] mb-4">
+                        <h2><%= data[i].book_nm %></h2>
+                        
+                        <div>
+                            <img src="<%= data[i].img_url %>">
+                        </div>
+                        
+                        <p>Book by: <%= data[i].author_nm%></p>
+                    </div>
+                    
+                    <a href="">
+                        <input class="bg-blue-300 py-2 w-full hover:rounded-md hover:opacity-75" type="submit" value="Request">
+                    </a>
+                </li>
+                
+            <% }
+        } else { %>
+        <li>No Records</li>
+    <% } %>
+
+    </ul>
+
+
+</body>
+</html>

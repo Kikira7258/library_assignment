@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Cohort</th>
+                    <th>Name</th>
+                    <th>Book</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% if(data.length){
+                    for(var i = 0; i < data.length; i++) { %>
+                    <tr>
+                        <td><%= data[i].student.cohort %></td>
+                        <td><%= data[i].student.first_nm %> <%= data[i].student.last_nm %></td>
+                        <td><%= data[i].books.name %></td>
+                        <td>
+                            <a href=""><i class="fa-solid fa-check text-green-600"></i></a>
+                            <a href=""><i class="fa-solid fa-x text-red-600"></i></a>
+                        </td>
+                    </tr>
+                
+                <% }
+                
+                } else { %>
+                    <tr>
+                        <td>No Records</td>
+                    </tr>
+                <% } %>
+                
+            </tbody>
+        </table>
+    </div>
+</body>
+    
+</html>
